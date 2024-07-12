@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center mb-3">
+        <h2>User List</h2>
+        <button class="btn btn-add-product" [routerLink]="['/users/add-user']">
+          <i class="fa-solid fa-plus me-2"></i>Add New User
+        </button>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of userList; index as i">
+              <td>{{ i + 1 }}</td>
+              <td>{{ user._id }}</td>
+              <td>{{ user.username |titlecase}}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.role | titlecase }}</td>
+              <td>
+                <button class="btn  btn-sm me-2" (click)="editUser(user)" style="background-color: #00adb5; color: white;">
+                  <i class="fa-solid fa-user-pen me-2"></i>Update
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="deleteUser(user)">
+                  <i class="fas fa-trash me-2"></i>Delete
+                </button>
+               
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

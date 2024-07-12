@@ -1,0 +1,81 @@
+$dark-blue: #222831;
+$blue-gray: #393e46;
+$light-blue: #00adb5;
+$off-white: #eeeeee;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .card {
+    border: 1px solid $blue-gray;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: $off-white;
+
+    .card-header {
+      background-color: $dark-blue;
+      color: $off-white;
+      padding: 15px;
+      border-bottom: 1px solid $blue-gray;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+
+      h2 {
+        margin: 0;
+      }
+
+      .btn-add-product {
+        background-color: $light-blue;
+        color: $off-white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken($light-blue, 10%);
+        }
+
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .card-body {
+      padding: 15px;
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th, td {
+          padding: 12px 15px;
+          border: 1px solid $blue-gray;
+          text-align: left;
+        }
+
+        th {
+          background-color: $blue-gray;
+          color: $off-white;
+        }
+
+        td {
+          background-color: $off-white;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center mb-3">
+        <h2>Profile List</h2>
+        <button class="btn btn-add-product" [routerLink]="['/users/add-user']">
+          <i class="fa-solid fa-plus me-2"></i>Add New Profile
+        </button>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr >
+              <th>No.</th>
+              <th>Profile ID</th>
+              <th>User Name</th>
+              <th>Profile Name</th>
+              <th>Email</th>
+              <th>Dob</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let profile of allProfile; index as i">
+              <td>{{ i + 1 }}</td>
+              <td>{{ profile._id }}</td>
+              <td>{{ profile.userId.username | titlecase }}</td>
+              <td>{{ profile.name | titlecase }}</td>
+              <td>{{ profile.email }}</td>
+              <td>{{ profile.dob| date:'shortDate' }}</td>
+              <td>
+                <button class="btn  btn-sm me-2" (click)="editProfile(profile)" style="background-color: #00adb5; color: white;">
+                  <i class="fa-solid fa-user-pen me-2"></i>Update
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="deleteProfile(profile)">
+                  <i class="fas fa-trash me-2"></i>Delete
+                </button>
+               
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
